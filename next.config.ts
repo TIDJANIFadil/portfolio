@@ -5,6 +5,11 @@ const nextConfig: NextConfig = {
   basePath: "/fadil-portfolio",
   assetPrefix: "/fadil-portfolio/",
 
+  /* Exposer le basePath aux composants */
+  env: {
+    NEXT_PUBLIC_BASE_PATH: "/fadil-portfolio",
+  },
+
   /* Optimisation des images */
   images: {
     formats: ["image/avif", "image/webp"],

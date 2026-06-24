@@ -15,6 +15,8 @@ export default function ProjectCard({
   index,
   onOpen,
 }: ProjectCardProps) {
+  const imgSrc = `${process.env.NEXT_PUBLIC_BASE_PATH || ""}${project.image}`;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -32,7 +34,7 @@ export default function ProjectCard({
       <div className="relative aspect-video overflow-hidden bg-[var(--bg-tertiary)]">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={project.image}
+          src={imgSrc}
           alt={project.title}
           className="w-full h-full object-cover absolute inset-0 group-hover:scale-105 transition-transform duration-500"
           loading="lazy"
