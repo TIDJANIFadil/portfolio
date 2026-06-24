@@ -30,16 +30,14 @@ export default function ProjectCard({
     >
       {/* Image */}
       <div className="relative aspect-video overflow-hidden bg-[var(--bg-tertiary)]">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center">
-            <div className="w-16 h-16 mx-auto rounded-xl bg-[var(--accent)]/10 flex items-center justify-center mb-2">
-              <Eye size={28} className="text-[var(--accent)]" />
-            </div>
-            <p className="text-sm text-[var(--text-secondary)]">
-              {project.title}
-            </p>
-          </div>
-        </div>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-full object-cover absolute inset-0 group-hover:scale-105 transition-transform duration-500"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)]/90 via-[var(--bg-primary)]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
         {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)]/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
