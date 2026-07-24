@@ -117,19 +117,19 @@ export default function Contact() {
             {/* Contact info */}
             <div className="space-y-4">
               <a
-                href="mailto:fadil@example.com"
+                href="mailto:tidjaniakambifadil@gmail.com"
                 className="flex items-center gap-3 text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors group"
               >
                 <div className="w-10 h-10 rounded-lg glass flex items-center justify-center group-hover:bg-[var(--accent)]/10 transition-colors">
                   <Mail size={18} className="text-[var(--accent)]" />
                 </div>
-                <span>fadil@example.com</span>
+                <span>tidjaniakambifadil@gmail.com</span>
               </a>
               <div className="flex items-center gap-3 text-sm text-[var(--text-secondary)]">
                 <div className="w-10 h-10 rounded-lg glass flex items-center justify-center">
                   <MapPin size={18} className="text-[var(--accent)]" />
                 </div>
-                <span>IFRI, Bénin</span>
+                <span>Cotonou, Bénin</span>
               </div>
             </div>
 

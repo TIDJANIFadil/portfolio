@@ -33,7 +33,7 @@ const socialLinks = [
     href: "https://x.com/fadiltdj",
     label: "X (Twitter)",
   },
-  { icon: ({ size = 18 }: { size?: number }) => <Mail size={size} />, href: "mailto:fadil@example.com", label: "Email" },
+  { icon: ({ size = 18 }: { size?: number }) => <Mail size={size} />, href: "mailto:tidjaniakambifadil@gmail.com", label: "Email" },
 ];
 
 const footerLinks = [
