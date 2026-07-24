@@ -20,15 +20,15 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "projet-1",
-    title: "Nom du Projet 1",
+    title: "Plateforme de gestion des documents administratifs IFRI",
     subtitle: "Une application web moderne",
     description:
-      "Une brève description de votre projet. Ce que vous avez fait, les problèmes résolus.",
+      "Plateforme web de gestion des demandes de documents administratifs pour l'IFRI, permettant aux étudiants de soumettre leurs demandes en ligne, de suivre leur traitement en temps réel et de télécharger leurs documents de manière sécurisée via un code secret. Développée en PHP, MySQL et Tailwind CSS.",
     longDescription:
-      "Description détaillée du projet. Parlez du contexte, des défis techniques, de votre approche et des résultats obtenus. Cette description apparaîtra dans la modale de détail du projet.",
+      "Cette plateforme web a été conçue pour digitaliser la gestion des demandes de documents administratifs à l'Institut de Formation et de Recherche en Informatique (IFRI), un processus qui reposait jusqu'alors entièrement sur des démarches manuelles et chronophages. Elle propose deux espaces distincts : un espace administrateur, depuis lequel le personnel inscrit les étudiants, traite les demandes reçues et dépose les documents finalisés, et un espace étudiant, permettant de soumettre une demande accompagnée de pièces justificatives et d'en suivre l'évolution en temps réel. La sécurité a été au cœur de la conception, avec un système de retrait par code secret généré automatiquement, garantissant que seul le véritable demandeur peut récupérer son document. Développée en PHP natif avec une base de données MySQL, une interface Tailwind CSS et des notifications automatiques par email via PHPMailer, cette solution a été pensée pour rester légère, sécurisée et entièrement adaptée au contexte d'un établissement académique béninois. Le projet a été précédé d'un benchmarking approfondi des solutions existantes ainsi que d'une modélisation UML complète, garantissant une démarche méthodique de la conception à la réalisation.",
     category: "web",
-    tags: ["React", "UI/UX", "Responsive"],
-    technologies: ["React", "Next.js", "Tailwind CSS", "TypeScript", "Figma"],
+    tags: ["UI/UX", "PHP", "MySQL", "Tailwind CSS"],
+    technologies: ["UI/UX", "PHP", "MySQL", "Tailwind CSS", "Figma"],
     image: "/images/projects/project1.jpg",
     images: [
       "/images/projects/project1.jpg",
@@ -92,21 +92,22 @@ export const projects: Project[] = [
   },
   {
     id: "projet-4",
-    title: "Nom du Projet 4",
-    subtitle: "Site web vitrine",
+    title: "Robbie-lens-Photographie",
+    subtitle: "Site vitrine pour photographe",
     description:
-      "Un site web vitrine pour un client avec un design moderne.",
+      "Site web vitrine pour Robbie Lens, photographe professionnelle, présentant son portfolio et ses services.",
     longDescription:
-      "Description détaillée du site vitrine. Parlez de la collaboration avec le client, du design, du développement et des résultats.",
+      "Site web vitrine réalisé pour Robbie Lens, une photographe professionnelle souhaitant présenter son travail en ligne. Le site a été conçu avec une identité visuelle épurée mettant en valeur les photos, avec un design responsive adapté à tous les écrans.\n\nDéveloppé avec HTML et CSS natifs, le site propose trois pages (Accueil, À propos, Portfolio) avec une galerie d'images, un formulaire de contact et des liens vers les réseaux sociaux. Le design minimaliste met l'accent sur les photographies sans distraction.\n\nCe projet m'a permis de travailler sur un cas concret de site vitrine pour un professionnel créatif, en accordant une attention particulière à la mise en valeur des visuels et à l'expérience utilisateur.",
     category: "web",
-    tags: ["WordPress", "UI/UX", "SEO"],
-    technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "Figma"],
-    image: "/images/projects/project4.jpg",
+    tags: ["HTML", "CSS", "UI/UX", "Responsive"],
+    technologies: ["HTML5", "CSS3", "Figma"],
+    image: "/images/projects/projet-4/page_accueil_Robbie_Lens.png",
     images: [
-      "/images/projects/project4.jpg",
-      "/images/projects/project4.jpg",
+      "/images/projects/projet-4/page_accueil_Robbie_Lens.png",
+      "/images/projects/projet-4/page_portfolio_Robbie_Lens.png",
+      "/images/projects/projet-4/page_à_propos_Robbie_Lens.png",
     ],
-    liveUrl: "https://example.com",
+    liveUrl: "https://robbie-lens-photographie-255lmo8mc-fadil9.vercel.app",
     featured: false,
     year: 2024,
   },

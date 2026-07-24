@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useCallback } from "react";
+import { useEffect, useCallback, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 import type { Project } from "@/data/projects";
@@ -12,6 +12,8 @@ interface ProjectModalProps {
 
 export default function ProjectModal({ project, onClose }: ProjectModalProps) {
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+  const [currentImage, setCurrentImage] = useState(0);
+
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -23,6 +25,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
     if (project) {
       document.body.style.overflow = "hidden";
       window.addEventListener("keydown", handleKeyDown);
+      setCurrentImage(0);
     }
     return () => {
       document.body.style.overflow = "";
@@ -66,24 +69,55 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               <X size={18} />
             </button>
 
-            {/* Image principale */}
-            <div className="relative aspect-video bg-[var(--bg-tertiary)] overflow-hidden">
+            {/* Image principale avec carousel */}
+            <div className="relative aspect-video bg-[var(--bg-tertiary)] overflow-hidden group/image">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={`${basePath}${project.image}`}
-                alt={project.title}
-                className="w-full h-full object-cover"
+                src={`${basePath}${project.images[currentImage]}`}
+                alt={`${project.title} - Image ${currentImage + 1}`}
+                className="w-full h-full object-cover transition-opacity duration-300"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-secondary)] via-transparent to-transparent" />
 
-              {/* Galerie : miniatures */}
+              {/* Boutons précédent/suivant */}
               {project.images.length > 1 && (
-                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 px-3 py-2 rounded-full glass/80">
-                  {project.images.map((img, i) => (
+                <>
+                  <button
+                    onClick={() =>
+                      setCurrentImage((prev) =>
+                        prev === 0 ? project.images.length - 1 : prev - 1
+                      )
+                    }
+                    className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full glass text-white/80 hover:text-white hover:bg-white/20 transition-all opacity-0 group-hover/image:opacity-100 cursor-pointer"
+                    aria-label="Image précédente"
+                  >
+                    <ChevronLeft size={20} />
+                  </button>
+                  <button
+                    onClick={() =>
+                      setCurrentImage((prev) =>
+                        prev === project.images.length - 1 ? 0 : prev + 1
+                      )
+                    }
+                    className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full glass text-white/80 hover:text-white hover:bg-white/20 transition-all opacity-0 group-hover/image:opacity-100 cursor-pointer"
+                    aria-label="Image suivante"
+                  >
+                    <ChevronRight size={20} />
+                  </button>
+                </>
+              )}
+
+              {/* Indicateurs de position */}
+              {project.images.length > 1 && (
+                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2 px-3 py-1.5 rounded-full glass/80">
+                  {project.images.map((_, i) => (
                     <button
                       key={i}
-                      className={`w-2 h-2 rounded-full transition-all duration-200 cursor-pointer ${
-                        i === 0 ? "bg-[var(--accent)] w-4" : "bg-white/40 hover:bg-white/60"
+                      onClick={() => setCurrentImage(i)}
+                      className={`rounded-full transition-all duration-200 cursor-pointer ${
+                        i === currentImage
+                          ? "w-5 h-2 bg-[var(--accent)]"
+                          : "w-2 h-2 bg-white/40 hover:bg-white/70"
                       }`}
                       aria-label={`Image ${i + 1}`}
                     />
