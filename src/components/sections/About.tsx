@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Download, MapPin, Calendar, Award } from "lucide-react";
 import SectionTitle from "@/components/ui/SectionTitle";
@@ -63,19 +64,14 @@ export default function About() {
             transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
             className="lg:col-span-2 flex flex-col items-center lg:items-start gap-6"
           >
-            {/* Avatar placeholder */}
+            {/* Photo de profil */}
             <div className="relative w-64 h-64 md:w-72 md:h-72 rounded-2xl overflow-hidden glass group">
-              <div className="absolute inset-0 bg-[var(--gradient-accent)] opacity-20 group-hover:opacity-30 transition-opacity duration-300" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-24 h-24 mx-auto rounded-full bg-[var(--accent)]/20 flex items-center justify-center mb-3">
-                    <span className="text-4xl font-bold text-gradient">FT</span>
-                  </div>
-                  <p className="text-sm text-[var(--text-secondary)]">
-                    Ta photo ici
-                  </p>
-                </div>
-              </div>
+              <Image
+                src="/fadil-portfolio/images/profile.jpg"
+                alt="Fadil TIDJANI"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-300"
+              />
               {/* Animated border */}
               <div className="absolute inset-0 rounded-2xl border border-[var(--border)]" />
             </div>
@@ -177,7 +173,7 @@ export default function About() {
             </div>
 
             {/* CV Button */}
-            <Button variant="primary" icon={<Download size={18} />}>
+            <Button variant="primary" icon={<Download size={18} />} href="/fadil-portfolio/cv/cv.pdf">
               Télécharger mon CV
             </Button>
           </motion.div>

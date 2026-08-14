@@ -1,16 +1,16 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  output: "export",
-  basePath: "/fadil-portfolio",
-  assetPrefix: "/fadil-portfolio/",
+const isVercel = process.env.VERCEL === "1";
 
-  /* Exposer le basePath aux composants */
+const nextConfig: NextConfig = {
+  ...(isVercel ? {} : { output: "export" }),
+  basePath: isVercel ? "" : "/fadil-portfolio",
+  assetPrefix: isVercel ? "" : "/fadil-portfolio/",
+
   env: {
-    NEXT_PUBLIC_BASE_PATH: "/fadil-portfolio",
+    NEXT_PUBLIC_BASE_PATH: isVercel ? "" : "/fadil-portfolio",
   },
 
-  /* Optimisation des images */
   images: {
     formats: ["image/avif", "image/webp"],
     unoptimized: true,

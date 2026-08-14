@@ -11,7 +11,7 @@ interface ProjectModalProps {
 }
 
 export default function ProjectModal({ project, onClose }: ProjectModalProps) {
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+  const basePath = "/fadil-portfolio";
   const [currentImage, setCurrentImage] = useState(0);
 
   const handleKeyDown = useCallback(

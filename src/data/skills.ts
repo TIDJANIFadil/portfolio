@@ -16,10 +16,6 @@ export const skillCategories: SkillCategory[] = [
     name: "Design UI/UX",
     skills: [
       { name: "Figma", level: 90 },
-      { name: "Adobe XD", level: 75 },
-      { name: "Photoshop", level: 70 },
-      { name: "Illustrator", level: 65 },
-      { name: "Prototypage", level: 85 },
     ],
   },
   {
@@ -27,10 +23,8 @@ export const skillCategories: SkillCategory[] = [
     name: "Frontend",
     skills: [
       { name: "React / Next.js", level: 80 },
-      { name: "TypeScript", level: 75 },
       { name: "Tailwind CSS", level: 85 },
       { name: "HTML / CSS", level: 95 },
-      { name: "Framer Motion", level: 70 },
     ],
   },
   {
@@ -38,7 +32,6 @@ export const skillCategories: SkillCategory[] = [
     name: "Backend",
     skills: [
       { name: "Node.js", level: 65 },
-      { name: "Express", level: 60 },
       { name: "PHP", level: 70 },
       { name: "MySQL", level: 65 },
     ],
