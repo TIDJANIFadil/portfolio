@@ -15,7 +15,8 @@ export default function ProjectCard({
   index,
   onOpen,
 }: ProjectCardProps) {
-  const imgSrc = `/fadil-portfolio${project.image}`;
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+  const imgSrc = `${basePath}${project.image}`;
 
   return (
     <motion.div
