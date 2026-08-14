@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
   ...(isVercel ? {} : { output: "export", trailingSlash: true }),
   basePath: isVercel ? "" : "/fadil-portfolio",
   assetPrefix: isVercel ? "" : "/fadil-portfolio/",
+  trailingSlash: true,
 
   env: {
     NEXT_PUBLIC_BASE_PATH: isVercel ? "" : "/fadil-portfolio",
