@@ -168,7 +168,7 @@ export default function About() {
             </div>
 
             {/* CV Button */}
-            <Button variant="primary" icon={<Download size={18} />} href={`${basePath}/cv/cv.pdf`}>
+            <Button variant="primary" icon={<Download size={18} />} href="#">
               Télécharger mon CV
             </Button>
           </motion.div>
