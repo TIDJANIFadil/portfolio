@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 const isVercel = process.env.VERCEL === "1";
 
 const nextConfig: NextConfig = {
-  ...(isVercel ? {} : { output: "export" }),
+  ...(isVercel ? {} : { output: "export", trailingSlash: true }),
   basePath: isVercel ? "" : "/fadil-portfolio",
   assetPrefix: isVercel ? "" : "/fadil-portfolio/",
 
