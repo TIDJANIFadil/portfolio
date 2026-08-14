@@ -40,6 +40,8 @@ const timeline = [
 ];
 
 export default function About() {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
   return (
     <section
       id="about"
@@ -67,7 +69,7 @@ export default function About() {
             {/* Photo de profil */}
             <div className="relative w-64 h-64 md:w-72 md:h-72 rounded-2xl overflow-hidden glass group">
               <Image
-                src="/fadil-portfolio/images/profile.jpg"
+                src={`${basePath}/images/profile.jpg`}
                 alt="Fadil TIDJANI"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-300"
@@ -173,7 +175,7 @@ export default function About() {
             </div>
 
             {/* CV Button */}
-            <Button variant="primary" icon={<Download size={18} />} href="/fadil-portfolio/cv/cv.pdf">
+            <Button variant="primary" icon={<Download size={18} />} href={`${basePath}/cv/cv.pdf`}>
               Télécharger mon CV
             </Button>
           </motion.div>
