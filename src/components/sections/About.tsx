@@ -69,7 +69,7 @@ export default function About() {
             {/* Photo de profil */}
             <div className="relative w-64 h-64 md:w-72 md:h-72 rounded-2xl overflow-hidden glass group">
               <Image
-                src={`${basePath}/images/profile.jpeg`}
+                src={`${basePath}/images/profile.jpg`}
                 alt="Fadil TIDJANI"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-300"
