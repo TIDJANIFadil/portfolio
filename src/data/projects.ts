@@ -40,7 +40,7 @@ export const projects: Project[] = [
       "/images/projects/projet-1/traiter_demande_pret.png",
       "/images/projects/projet-1/notification.png",
     ],
-    liveUrl: "https://example.com",
+    liveUrl: "https://ifri-portail.site",
     githubUrl: "https://github.com/TIDJANIFadil",
     featured: true,
     year: 2025,
