@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Download, MapPin, Calendar, Award } from "lucide-react";
 import SectionTitle from "@/components/ui/SectionTitle";
 import Button from "@/components/ui/Button";
@@ -66,8 +67,13 @@ export default function About() {
             className="lg:col-span-2 flex flex-col items-center lg:items-start gap-6"
           >
             {/* Photo de profil */}
-            <div className="relative w-64 h-64 md:w-72 md:h-72 rounded-2xl overflow-hidden glass group flex items-center justify-center">
-              <span className="text-5xl font-bold text-[var(--accent)]">FT</span>
+            <div className="relative w-64 h-64 md:w-72 md:h-72 rounded-2xl overflow-hidden glass group">
+              <Image
+                src={`${basePath}/images/profile.jpg`}
+                alt="Fadil TIDJANI"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-300"
+              />
               <div className="absolute inset-0 rounded-2xl border border-[var(--border)]" />
             </div>
 
